@@ -6,24 +6,38 @@
     <title>404_FRX PRIVATE LAB</title>
     <style>
         body { background: #000; color: #0f0; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        h1 { text-shadow: 0 0 10px #0f0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 20px; }
-        .target-btn { 
-            background: #111; border: 2px solid #0f0; color: #0f0; padding: 15px; 
-            cursor: pointer; text-decoration: none; font-weight: bold; display: block;
+        .section-title { color: #fff; text-decoration: underline; margin-top: 30px; text-shadow: 0 0 5px #fff; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 15px; }
+        
+        /* Tombol Safelinku - Hijau */
+        .sfl-btn { 
+            background: #020; border: 2px solid #0f0; color: #0f0; padding: 12px; 
+            cursor: pointer; text-decoration: none; font-weight: bold; display: block; font-size: 0.7rem;
         }
-        .target-btn:hover { background: #0f0; color: #000; box-shadow: 0 0 20px #0f0; }
+        .sfl-btn:hover { background: #0f0; color: #000; box-shadow: 0 0 15px #0f0; }
+
+        /* Tombol Adsterra - Merah/Putih */
+        .ads-btn { 
+            background: #100; border: 2px solid #f00; color: #f00; padding: 12px; 
+            cursor: pointer; text-decoration: none; font-weight: bold; display: block; font-size: 0.7rem;
+        }
+        .ads-btn:hover { background: #f00; color: #fff; box-shadow: 0 0 15px #f00; }
     </style>
 </head>
 <body>
 
     <h1>💀 404_FRX GHOST ENGINE v2 💀</h1>
-    <p>FER_PRIORITY STATUS: [ACTIVE]</p>
+    <p style="color: #555;">MODE: SEGREGATED_ATTACK | FER_PRIORITY</p>
 
-    <div class="grid" id="container"></div>
+    <!-- SECTION 1: SAFELINKU -->
+    <h2 class="section-title">TARGET: SAFELINKU (22 NODES)</h2>
+    <div class="grid" id="sfl-container"></div>
+
+    <!-- SECTION 2: ADSTERRA SMARTLINKS -->
+    <h2 class="section-title">TARGET: ADSTERRA (22 NODES)</h2>
+    <div class="grid" id="ads-container"></div>
 
     <script>
-        // DATA SAFELINKU LU[cite: 2]
         const sflLinks = [
             "https://sfl.gl/0NDoq", "https://sfl.gl/793xdaWoIf", "https://sfl.gl/mEyVDx7WPgsr",
             "https://sfl.gl/dKpxnP9v", "https://sfl.gl/mSW8a", "https://sfl.gl/uj1HLR",
@@ -35,7 +49,6 @@
             "https://sfl.gl/ISHmduU"
         ];
 
-        // DATA SMARTLINK ADSTERRA LU[cite: 3]
         const adsLinks = [
             "https://www.profitablecpmratenetwork.com/c0deyh7dmt?key=adfb366aa1fe18928c37f608bb156a00",
             "https://www.profitablecpmratenetwork.com/nwhse3wvv4?key=2453de30f89b31b1ee1bb72f8494c7d2",
@@ -61,22 +74,28 @@
             "https://www.profitablecpmratenetwork.com/jgrfz4vey?key=152ac69ff1e81b1dd902f2e2bacb1716"
         ];
 
-        const container = document.getElementById('container');
+        const sflContainer = document.getElementById('sfl-container');
+        const adsContainer = document.getElementById('ads-container');
 
-        for (let i = 0; i < sflLinks.length; i++) {
+        // Render Tombol Safelinku
+        sflLinks.forEach((link, i) => {
             const btn = document.createElement('a');
-            btn.href = sflLinks[i];
-            btn.className = "target-btn";
+            btn.href = link;
+            btn.className = "sfl-btn";
             btn.target = "_blank";
-            btn.innerText = `NODE_${i + 1}_EXECUTE`;
-            
-            // Pas diklik, buka Smartlink Adsterra juga
-            btn.onclick = () => {
-                window.open(adsLinks[i], '_blank');
-            };
-            
-            container.appendChild(btn);
-        }
+            btn.innerText = `SFL_NODE_${i + 1}`;
+            sflContainer.appendChild(btn);
+        });
+
+        // Render Tombol Adsterra
+        adsLinks.forEach((link, i) => {
+            const btn = document.createElement('a');
+            btn.href = link;
+            btn.className = "ads-btn";
+            btn.target = "_blank";
+            btn.innerText = `ADS_SMART_${i + 1}`;
+            adsContainer.appendChild(btn);
+        });
     </script>
 </body>
 </html>
