@@ -1,101 +1,45 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404_FRX PRIVATE LAB</title>
+    <title>Private Security Lab - 404_FRX</title>
     <style>
-        body { background: #000; color: #0f0; font-family: 'Courier New', monospace; text-align: center; padding: 20px; }
-        .section-title { color: #fff; text-decoration: underline; margin-top: 30px; text-shadow: 0 0 5px #fff; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-top: 15px; }
-        
-        /* Tombol Safelinku - Hijau */
-        .sfl-btn { 
-            background: #020; border: 2px solid #0f0; color: #0f0; padding: 12px; 
-            cursor: pointer; text-decoration: none; font-weight: bold; display: block; font-size: 0.7rem;
-        }
-        .sfl-btn:hover { background: #0f0; color: #000; box-shadow: 0 0 15px #0f0; }
-
-        /* Tombol Adsterra - Merah/Putih */
-        .ads-btn { 
-            background: #100; border: 2px solid #f00; color: #f00; padding: 12px; 
-            cursor: pointer; text-decoration: none; font-weight: bold; display: block; font-size: 0.7rem;
-        }
-        .ads-btn:hover { background: #f00; color: #fff; box-shadow: 0 0 15px #f00; }
+        body { background: #0a0a0a; color: #00ff00; font-family: 'Courier New', monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .box { border: 1px solid #00ff00; padding: 20px; box-shadow: 0 0 15px #00ff00; text-align: center; }
+        .btn { background: #00ff00; color: #000; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { background: #ff0000; color: #fff; box-shadow: 0 0 20px #ff0000; }
+        h1 { font-size: 1.5rem; margin-bottom: 10px; }
     </style>
 </head>
 <body>
-
-    <h1>💀 404_FRX GHOST ENGINE v2 💀</h1>
-    <p style="color: #555;">MODE: SEGREGATED_ATTACK | FER_PRIORITY</p>
-
-    <!-- SECTION 1: SAFELINKU -->
-    <h2 class="section-title">TARGET: SAFELINKU (22 NODES)</h2>
-    <div class="grid" id="sfl-container"></div>
-
-    <!-- SECTION 2: ADSTERRA SMARTLINKS -->
-    <h2 class="section-title">TARGET: ADSTERRA (22 NODES)</h2>
-    <div class="grid" id="ads-container"></div>
+    <div class="box">
+        <h1>ACCESS GRANTED: SECURITY_EXT_V.9899</h1>
+        <p>STATUS: [READY TO DOWNLOAD]</p>
+        <a id="main-link" href="#" class="btn target-link">GET SECURITY PATCH</a>
+    </div>
 
     <script>
-        const sflLinks = [
-            "https://sfl.gl/0NDoq", "https://sfl.gl/793xdaWoIf", "https://sfl.gl/mEyVDx7WPgsr",
-            "https://sfl.gl/dKpxnP9v", "https://sfl.gl/mSW8a", "https://sfl.gl/uj1HLR",
-            "https://sfl.gl/UMafL", "https://sfl.gl/lUnkTG", "https://sfl.gl/yLFAAcn",
-            "https://sfl.gl/dFxODmB", "https://sfl.gl/xi8S", "https://sfl.gl/IRz75KHV",
-            "https://sfl.gl/zm1k6k", "https://sfl.gl/cVlIRnr", "https://sfl.gl/WzSjyI88",
-            "https://sfl.gl/hdcE4twS", "https://sfl.gl/xbmwrLe", "https://sfl.gl/I7JohvD7",
-            "https://sfl.gl/AWYPmm8", "https://sfl.gl/3HYTl", "https://sfl.gl/9HT5p7Qi",
-            "https://sfl.gl/ISHmduU"
+        const links = [
+            "https://sfl.gl/0NDoq", "https://sfl.gl/793xdaWoIf", "https://sfl.gl/mEyVDx7WPgsr", 
+            "https://sfl.gl/dKpxnP9v", "https://sfl.gl/mSW8a", "https://sfl.gl/uj1HLR", 
+            "https://sfl.gl/UMafL", "https://sfl.gl/lUnkTG", "https://sfl.gl/yLFAAcn", 
+            "https://sfl.gl/dFxODmB", "https://sfl.gl/xi8S", "https://sfl.gl/IRz75KHV", 
+            "https://sfl.gl/zm1k6k", "https://sfl.gl/cVlIRnr", "https://sfl.gl/WzSjyI88", 
+            "https://sfl.gl/hdcE4twS", "https://sfl.gl/xbmwrLe", "https://sfl.gl/I7JohvD7", 
+            "https://sfl.gl/AWYPmm8", "https://sfl.gl/3HYTl", "https://sfl.gl/9HT5p7Qi", 
+            "https://sfl.gl/ISHmduU", "https://sfl.gl/SHaCY", "https://sfl.gl/bfcYxIR", 
+            "https://sfl.gl/fnPcI", "https://sfl.gl/Fxa8D9", "https://sfl.gl/Yc8zkr", 
+            "https://sfl.gl/Nnju6v", "https://sfl.gl/pGYcW0cD", "https://sfl.gl/3C60oU2", 
+            "https://sfl.gl/3AydRqs", "https://sfl.gl/pLvaFZPO", "https://sfl.gl/ieM7", 
+            "https://sfl.gl/G85ZTXC", "https://sfl.gl/DmnhaklO", "https://sfl.gl/7ise", 
+            "https://sfl.gl/I4yIRGe", "https://sfl.gl/en5gMXsP", "https://sfl.gl/sIuUEp48", 
+            "https://sfl.gl/eGq5g", "https://sfl.gl/TeEWGWT", "https://sfl.gl/cyXv"
         ];
-
-        const adsLinks = [
-            "https://www.profitablecpmratenetwork.com/c0deyh7dmt?key=adfb366aa1fe18928c37f608bb156a00",
-            "https://www.profitablecpmratenetwork.com/nwhse3wvv4?key=2453de30f89b31b1ee1bb72f8494c7d2",
-            "https://www.profitablecpmratenetwork.com/nbhsi8pgqq?key=349d43e07899e1d80ccb2c3266bbd803",
-            "https://www.profitablecpmratenetwork.com/pw9ib6ufg1?key=f9e669de5d99b4631e0b1c8810af4dd0",
-            "https://www.profitablecpmratenetwork.com/ha93bcbxi?key=4a1e35d1dd00f069874fc2ad1bb25c77",
-            "https://www.profitablecpmratenetwork.com/z0ezk7wmi?key=d607132c924006932601d3f20058f408",
-            "https://www.profitablecpmratenetwork.com/ni38apgx5?key=2db3226e5498f80b9a017148af962319",
-            "https://www.profitablecpmratenetwork.com/yq1cy9j5?key=385030d7a0542ade0b9ce278dab4a2dd",
-            "https://www.profitablecpmratenetwork.com/rbb5nh1a?key=be58b724a9bf3a458d25fb3db7e45828",
-            "https://www.profitablecpmratenetwork.com/cz3iqfxraf?key=2a6e23da8e299a6dc101bafc67f4ea95",
-            "https://www.profitablecpmratenetwork.com/xvs02y50gk?key=bbd263d77e5e3039ca32a435b46b2b29",
-            "https://www.profitablecpmratenetwork.com/baw87mbpg?key=351c41abf6377aa02b06063e7d82c703",
-            "https://www.profitablecpmratenetwork.com/mj9f5qcqt?key=2fe75c20e4159d95b49aa5c319f55f64",
-            "https://www.profitablecpmratenetwork.com/c0xsb821r6?key=300f536c742cfb85b50bbc4a70082cd9",
-            "https://www.profitablecpmratenetwork.com/sk9csv1mi?key=14f47f306fe4a01bc06b529657ea4b08",
-            "https://www.profitablecpmratenetwork.com/gehve3huah?key=86acc4d52f7c787fcbebde6cd957ecd4",
-            "https://www.profitablecpmratenetwork.com/m2grcn2e2x?key=795509bd45360b6eb4dc84d3fe1515d5",
-            "https://www.profitablecpmratenetwork.com/b5hpffpe?key=8864304095139f19aed47785207c2de9",
-            "https://www.profitablecpmratenetwork.com/kv280f4qv?key=089c22ee4dde7577310b570cc09509dd",
-            "https://www.profitablecpmratenetwork.com/s9rwuiau3k?key=a8c1255c35feada06cb8e715b67675f4",
-            "https://www.profitablecpmratenetwork.com/gcsvxq5w75?key=cc75871ca0afd482f914282b7304d58b",
-            "https://www.profitablecpmratenetwork.com/jgrfz4vey?key=152ac69ff1e81b1dd902f2e2bacb1716"
-        ];
-
-        const sflContainer = document.getElementById('sfl-container');
-        const adsContainer = document.getElementById('ads-container');
-
-        // Render Tombol Safelinku
-        sflLinks.forEach((link, i) => {
-            const btn = document.createElement('a');
-            btn.href = link;
-            btn.className = "sfl-btn";
-            btn.target = "_blank";
-            btn.innerText = `SFL_NODE_${i + 1}`;
-            sflContainer.appendChild(btn);
-        });
-
-        // Render Tombol Adsterra
-        adsLinks.forEach((link, i) => {
-            const btn = document.createElement('a');
-            btn.href = link;
-            btn.className = "ads-btn";
-            btn.target = "_blank";
-            btn.innerText = `ADS_SMART_${i + 1}`;
-            adsContainer.appendChild(btn);
-        });
+        
+        // Pick random link from the 42 options
+        const randomLink = links[Math.floor(Math.random() * links.length)];
+        document.getElementById('main-link').href = randomLink;
     </script>
 </body>
 </html>
